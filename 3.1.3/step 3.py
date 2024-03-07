@@ -10,6 +10,9 @@ flarge = 2
 total = 0.0
 z = ""
 s = ""
+r = ""
+l = ""
+
 x = input(print("select a sandwich type, Chicken: $5.25, Beef: $6.25, Tofu: $5.75"))
 if x == "chicken":
     print("you have seleted chicken")
@@ -57,6 +60,36 @@ elif s == "medium":
 elif s == "large":
     print("you have selected large fries")
     total = flarge + total
+
+r = input(print("how many ketchup packets would you like?"))
+r = int(r)
+total = total + abs(r) * .25
+
+if y == "yes" and f == "yes":
+    total = total - 1.00
+if x == "chicken":
+    print("you have seleted chicken")
+elif x == "beef":
+    print("you have selected beef")
+elif x == "tofu":
+    print("you have selected tofu")
+
+if z == "small":
+    print("you have selected small drink")
+elif z == "medium":
+    print("you have selected medium drink")
+elif z == "large":
+    print("you have selected large drink")
+
+if l == "no":
+    print("you have selected small fries")
+elif l == "yes":
+    print("you have selected mega fries")
+elif s == "medium":
+    print("you have selected medium fries")
+elif s == "large":
+    print("you have selected large fries")
+
 
 
 print("your sandwich price is $", total)
