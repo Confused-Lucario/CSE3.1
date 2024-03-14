@@ -34,21 +34,22 @@ elif "beef" in order:
 bev_choice = input("Do you want a beverage? yes or no")
 if bev_choice == "yes":
     order.append(input("What size beverage would you like? SmallBev, MediumBev, or LargeBev"))
-    if "smallBev" in order:
+    if "smallbev" in order:
         print("You chose small, so $1.00")
         subtotal += 1
-    if "mediumBev" in order:
+    if "mediumbev" in order:
         print("You chose medium, so $1.75")
         subtotal += 1.75
-    if "largeBev" in order:
+    if "largebev" in order:
         print("You chose large, so $2.25")
         subtotal += 2.25
-
+else:
+    order.append("nobev")
 # Fries
 fry_choice = input("Do you want french fries? Yes or No")
 if fry_choice == "yes":
     order.append(input("What size fries would you like? SmallFry, MediumFry, or LargeFry"))
-    if "smallFry" in order:
+    if "smallfry" in order:
         supersize = input("Do you want to supersize that for $2? Yes or no")
         if supersize == "yes":
             fry_size = "large"
@@ -56,17 +57,19 @@ if fry_choice == "yes":
         else:
             print("You chose small fries for $1")
             subtotal += 1
-    elif "mediumFry" in order:
+    elif "mediumfry" in order:
         print("You chose medium for $1.50")
         subtotal += 1.50
-    elif "largeFry" in order:
+    elif "largefry" in order:
         print("You chose large fries for $2")
         subtotal += 2
+else:
+    order.append("nofry")
 
 # Kethcup
-order.append(float(input("HJow many ketup packets would you like? $0.25 each")))
-if order[3] >= 0:
-    subtotal += order[3] * .25
+order.insert(0, float(input("HJow many ketup packets would you like? $0.25 each")))
+if order[0] >= 0:
+    subtotal += order[0] * .25
 
 if bev_choice == "yes" and fry_choice == "yes":
     subtotal -= 1
